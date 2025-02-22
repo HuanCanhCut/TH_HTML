@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Danh mục sản phẩm</title>
+    </head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'arial ';
+        }
+
+        .container {
+            width: 80vw;
+            margin: 20px auto;
+            gap: 16px;
+        }
+
+        .banner {
+            border: 1px solid black;
+            height: 150px;
+            margin-bottom: 16px;
+            text-align: center;
+            line-height: 150px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 16px;
+        }
+
+        .product-list {
+            flex: 3;
+            border: 1px solid black;
+            padding: 16px;
+        }
+
+        .product-list h2 {
+            color: red;
+            margin-bottom: 16px;
+        }
+
+        .product-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .product-item img {
+            width: 200px;
+            height: 160px;
+            background-color: #4a90e2;
+        }
+
+        .product-info li {
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        .sidebar {
+            flex: 1;
+        }
+
+        .links {
+            border: 1px solid black;
+            margin-bottom: 16px;
+        }
+
+        .links-title {
+            background-color: #4a90e2;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .links ul {
+            padding: 16px 32px;
+            color: #4a90e2;
+        }
+
+        .links li {
+            line-height: 2;
+        }
+
+        .links a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        .ads {
+            border: 1px solid black;
+        }
+
+        .ads-title {
+            background-color: #4a90e2;
+            color: white;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .ad-item {
+            height: 120px;
+            background-color: #ccc;
+            margin: 8px 16px;
+            background-image: url('https://avatars.githubusercontent.com/u/107424860?v=4');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .footer {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+            margin-top: 16px;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div
+                class="banner"
+                style="background-image: url('https://avatars.githubusercontent.com/u/107424860?v=4')"
+            ></div>
+
+            <div class="main-content">
+                <div class="product-list">
+                    <h2>DANH MỤC SẢN PHẨM</h2>
+
+                    <div class="product-item">
+                        <img
+                            style="object-fit: cover; aspect-ratio: 1/1"
+                            src="https://avatars.githubusercontent.com/u/107424860?v=4"
+                            alt="Ảnh 1"
+                        />
+                        <ul class="product-info">
+                            <li>Tên sản phẩm: <b>300 bài code thiếu nhi</b></li>
+                            <li>Mã sản phẩm: <b>KHDSADSD</b></li>
+                            <li>Giá bán: <b>100.000đ</b></li>
+                            <li>Mô tả: <b>300 bài code thiếu nhi</b></li>
+                        </ul>
+                    </div>
+
+                    <div class="product-item">
+                        <img
+                            style="object-fit: cover; aspect-ratio: 1/1"
+                            src="https://avatars.githubusercontent.com/u/107424860?v=4"
+                            alt="Ảnh 2"
+                        />
+                        <ul class="product-info">
+                            <li>Tên sản phẩm: <b>300 bài code thiếu nhi</b></li>
+                            <li>Mã sản phẩm: <b>KHDSADSD</b></li>
+                            <li>Giá bán: <b>100.000đ</b></li>
+                            <li>Mô tả: <b>300 bài code thiếu nhi</b></li>
+                        </ul>
+                    </div>
+
+                    <div class="product-item">
+                        <img
+                            style="object-fit: cover; aspect-ratio: 1/1"
+                            src="https://avatars.githubusercontent.com/u/107424860?v=4"
+                            alt="Ảnh 3"
+                        />
+                        <ul class="product-info">
+                            <li>Tên sản phẩm: <b>300 bài code thiếu nhi</b></li>
+                            <li>Mã sản phẩm: <b>KHDSADSD</b></li>
+                            <li>Giá bán: <b>100.000đ</b></li>
+                            <li>Mô tả: <b>300 bài code thiếu nhi</b></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar">
+                    <div class="links">
+                        <div class="links-title">LIÊN KẾT</div>
+                        <ul>
+                            <li><a href="#">Liên kết số 1</a></li>
+                            <li><a href="#">Liên kết số 2</a></li>
+                            <li><a href="#">Liên kết số 3</a></li>
+                            <li><a href="#">Liên kết số 4</a></li>
+                            <li><a href="#">Liên kết số 5</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="ads">
+                        <div class="ads-title">QUẢNG CÁO</div>
+                        <div class="ad-item"></div>
+                        <div class="ad-item"></div>
+                        <div class="ad-item"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">Bản quyền thuộc về <b>Cao Trọng Huấn</b></div>
+        </div>
+    </body>
+</html>
