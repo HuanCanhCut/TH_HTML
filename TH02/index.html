@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: arial;
+            padding: 6px;
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 500;
+        }
+
+        .khoa {
+            margin-top: 2px;
+            color: rgb(0, 162, 255);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar {
+            width: 100%;
+            margin-top: 24px;
+            padding: 0 10px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            padding: 12px 16px;
+            white-space: nowrap;
+            flex: 1;
+            display: block;
+        }
+
+        .img-banner {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-top: 24px;
+        }
+
+        .container {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar {
+            width: 300px;
+            vertical-align: top;
+        }
+
+        .title {
+            padding: 2px 0;
+            width: 100%;
+            border-bottom: 3px solid orangered;
+        }
+
+        .title h3 {
+            font-size: 18px;
+            background-color: orangered;
+            width: fit-content;
+            padding: 8px 24px;
+            color: white;
+        }
+
+        .main__content {
+            display: flex;
+            gap: 24px;
+            padding-top: 16px;
+        }
+
+        .main__content-item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .main__content-item--left {
+            width: 35%;
+        }
+
+        .main__content-item--right {
+            width: 65%;
+        }
+
+        .main__content-item-left-img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        .main__content-item--right-item {
+            width: 100%;
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .main__content-item--right-item h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #555;
+            margin-top: 3px;
+        }
+
+        .main__content-item--right-item img {
+            width: 120px;
+            aspect-ratio: 1.4/1;
+            object-fit: cover;
+        }
+
+        .footer {
+            margin-top: 12px;
+            padding: 16px 0;
+            background-color: #bcbcbc;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    </style>
+    <body>
+        <h4>TRƯỜNG ĐẠI HỌC SƯ PHẠM KĨ THUẬT HƯNG YÊN</h4>
+        <h2 class="khoa">KHOA CÔNG NGHỆ THÔNG TIN</h2>
+
+        <nav class="navbar">
+            <a href="" class="nav-item">Trang chủ</a>
+            <a href="" class="nav-item">Giới thiệu</a>
+            <a href="" class="nav-item">Bộ môn - Trung tâm</a>
+            <a href="" class="nav-item">Đào tạo</a>
+            <a href="" class="nav-item">Nghiên cứu khoa học</a>
+            <a href="" class="nav-item">Tin tức</a>
+            <a href="" class="nav-item">Sự kiện</a>
+            <a href="" class="nav-item">Thông báo</a>
+        </nav>
+
+        <img src="https://redsvn.net/wp-content/uploads/2080/04/Calico-cat-01.jpg" class="img-banner" alt="" />
+
+        <div class="container">
+            <main class="main">
+                <div>
+                    <div class="title">
+                        <h3>Tin tức & Sự kiện</h3>
+                    </div>
+
+                    <div class="main__content">
+                        <div class="main__content-item main__content-item--left">
+                            <img
+                                class="main__content-item-left-img"
+                                src="https://m.yodycdn.com/blog/hinh-anh-meo-hai-huoc-yodyvn2.jpg"
+                                alt=""
+                            />
+                            <h4 style="font-weight: 600">
+                                Khoa Công Nghệ Thông Tin tổ chức sinh nhật cho các thầy cô trong tháng 2
+                            </h4>
+                            <p style="font-size: 14px">
+                                Hôm nay 20/2/2020 khoa Công nghệ thông tin tin vui mừng tổ chức sinh nhật cho các thầy
+                                cô có ngày sinh trong tháng 2: thầy Phạm Minh Chuẩn (20/2) và thầy Chu Bá Thành (22/2)
+                            </p>
+                        </div>
+                        <div class="main__content-item main__content-item--right">
+                            <div class="main__content-item--right-item">
+                                <img
+                                    src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                    alt=""
+                                />
+
+                                <h4>Lễ bảo vệ Luận văn Thạc sĩ chuyên ngành Công nghệ thông tin khóa 7</h4>
+                            </div>
+                            <div class="main__content-item--right-item">
+                                <img
+                                    src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                    alt=""
+                                />
+                                <h4>
+                                    Trường ĐH SPKT Hưng Yên vinh dự trong top 30 trường Đại học Việt Nam có công bố quốc
+                                    tế nhiều nhất
+                                </h4>
+                            </div>
+                            <div class="main__content-item--right-item">
+                                <img
+                                    src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                    alt=""
+                                />
+                                <h4>
+                                    Tổng công ty viễn thông Viettel về thăm và làm việc tại Khoa Công nghệ thông tin.
+                                </h4>
+                            </div>
+                            <div class="main__content-item--right-item">
+                                <img
+                                    src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                    alt=""
+                                />
+                                <h4>Khoa Công nghệ Thông tin công bố 02 đề án mở ngành đào tạo trình độ Đại học.</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p style="text-align: right; font-size: 14px; color: #555; font-weight: 600; margin-top: 16px">
+                        Xem thêm
+                    </p>
+                </div>
+                <div>
+                    <div class="title" style="border-bottom: 3px solid rgb(255, 115, 0)">
+                        <h3 style="background-color: rgb(255, 115, 0)">Hội thi sinh viên</h3>
+                    </div>
+
+                    <div style="margin-top: 20px; display: flex; flex-wrap: wrap">
+                        <div style="width: 50%; padding: 16px 20px">
+                            <h3
+                                style="
+                                    font-size: 18px;
+                                    margin-bottom: 6px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    color: green;
+                                "
+                            >
+                                VUI CÙNG IT
+                            </h3>
+                            <img
+                                style="width: 100%"
+                                src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div style="width: 50%; padding: 16px 20px">
+                            <h3
+                                style="
+                                    font-size: 18px;
+                                    margin-bottom: 6px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    color: rgb(0, 157, 255);
+                                "
+                            >
+                                OLYMPIC TIN HỌC
+                            </h3>
+                            <img
+                                style="width: 100%"
+                                src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div style="width: 50%; padding: 16px 20px">
+                            <h3
+                                style="
+                                    font-size: 18px;
+                                    margin-bottom: 6px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    color: green;
+                                "
+                            >
+                                VĂN NGHỆ - THỂ THAO
+                            </h3>
+                            <img
+                                style="width: 100%"
+                                src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div style="width: 50%; padding: 16px 20px">
+                            <h3
+                                style="
+                                    font-size: 18px;
+                                    margin-bottom: 6px;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    color: rgb(0, 157, 255);
+                                "
+                            >
+                                NGHIÊN CỨU KHOA HỌC
+                            </h3>
+                            <img
+                                style="width: 100%"
+                                src="https://cdn.giaoducthoidai.vn/images/87a7b2442062a13f399c8570bdaf256521b1b1845aedf11b63eac52c763da2c357693101a54e6a2aa425b516a301ee8aec268800fd5f4bd77fbe17a9214374bc8f665df1ddede984563e3805aba17a65cea55e5f5e6a0251e7c4762529763094/hinhanhhaihuoccualoaimeobighephinhngoisaovn_IAIW.jpg"
+                                alt=""
+                            />
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <aside class="sidebar">
+                <h2 style="padding: 8px 12px; background-color: rgb(0, 157, 255); color: white">Thông báo</h2>
+                <ul style="padding-left: 16px; margin-top: 20px">
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định công nhận tốt nghiệp ĐHLT (từ CDN)
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định phân chuyển ngành ĐHCQ khóa 2019-2023 (K17)
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định sinh viên bảo lưu kết quả học tập TK14.3 Nguyễn Minh Quang
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định công nhận tốt nghiệp ĐHCQ kỳ bổ sung 2019
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định công nhận tốt nghiệp ĐHLT (từ CD) học kỳ bổ sung 2019
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định sinh viên bảo lưu kết quả học tập TK16.8 Nguyễn Hữu Bắc
+                    </li>
+                    <li style="margin-bottom: 24px; font-size: 14px; color: #555; line-height: 1.5">
+                        Quyết định chuyển ngành từ CNTT -> KT ô tô lớp 101184 Nguyễn Sỹ Hiếu
+                    </li>
+                </ul>
+
+                <ul style="list-style: none; margin-top: 60px">
+                    <li>
+                        <a
+                            href="#"
+                            style="
+                                background-color: orangered;
+                                margin-top: 10px;
+                                padding: 0px 24px;
+                                display: flex;
+                                align-items: center;
+
+                                height: 50px;
+                            "
+                            >Học viên cao học</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            style="
+                                background-color: rgb(0, 157, 255);
+                                margin-top: 10px;
+                                padding: 0px 24px;
+                                display: flex;
+                                align-items: center;
+
+                                height: 50px;
+                            "
+                            >Sinh viên</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            style="
+                                background-color: orange;
+                                margin-top: 10px;
+                                padding: 0px 24px;
+                                display: flex;
+                                align-items: center;
+
+                                height: 50px;
+                            "
+                            >Văn bản</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            style="
+                                background-color: green;
+                                margin-top: 10px;
+                                padding: 0px 24px;
+                                display: flex;
+                                align-items: center;
+
+                                height: 50px;
+                            "
+                            >Hỏi đáp</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            style="
+                                background-color: purple;
+                                margin-top: 10px;
+                                padding: 0px 24px;
+                                display: flex;
+                                align-items: center;
+
+                                height: 50px;
+                            "
+                            >Liên hệ</a
+                        >
+                    </li>
+                </ul>
+
+                <a
+                    style="
+                        background-color: rgb(0, 157, 255);
+                        color: white;
+                        padding: 12px 24px;
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+                        margin-top: 40px;
+                    "
+                >
+                    Liên kết
+                </a>
+
+                <ul style="margin-top: 30px; padding-left: 16px">
+                    <li style="margin-bottom: 20px">Bộ môn Công nghệ phần mềm</li>
+                    <li style="margin-bottom: 20px">Bộ môn Mạng máy tính và truyền thông</li>
+                    <li style="margin-bottom: 20px">Bộ môn Kỹ thuật máy tính</li>
+                    <li style="margin-bottom: 20px">Trung tâm Hưng Yên Aptech</li>
+                </ul>
+            </aside>
+        </div>
+        <footer class="footer">
+            <p>Bản quyền thuộc về Khoa CNTT</p>
+            <p>Trường Đại học Sư phạm Kỹ thuật Hưng Yên</p>
+        </footer>
+    </body>
+</html>
