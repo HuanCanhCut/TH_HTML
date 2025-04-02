@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230902/pngtree-sunrise-above-a-sunrise-in-the-sky-image_13129631.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 16px;
+}
+
+.nav {
+    padding: 8px 40px;
+    border-radius: 8px;
+    background-color: rgb(31, 31, 188);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    padding: 2px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #eee;
+    width: 250px;
+}
+
+.sub-menu a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black !important;
+}
+
+.sub-menu a + a {
+    border-top: 1px solid #ccc;
+}
+
+.nav ul li:hover {
+    background-color: orange;
+}
+
+.nav ul li:hover .sub-menu {
+    display: block;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.header-img {
+    width: 100%;
+    aspect-ratio: 35/10;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.content-item {
+    width: 30%;
+    height: 400px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.content-item-title {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 8px 8px 0 0;
+}
+
+footer {
+    padding: 8px 16px;
+    border-top: 1px solid #ccc;
+    background-color: #eee;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    margin-top: 16px;
+    color: gray;
+}
+
+footer * {
+    color: gray !important;
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    font-size: 16px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.date {
+    color: gray;
+}
+
+.content-text {
+    margin-top: 10px;
+}
+
+.content-item-content {
+    padding: 16px;
+}
+
+.content-item-content ul {
+    padding-left: 40px;
+}
+
+.content-item-img {
+    width: 150px;
+    margin-right: 10px;
+    float: left;
+}
+
+p {
+    margin: 0;
+}
+
+.title {
+    font-size: 16px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.date {
+    color: gray;
+}
+
+.content-text {
+    margin-top: 10px;
+}
+
+.content img {
+    width: 120px;
+    margin-right: 10px;
+    float: left;
+}

@@ -1,0 +1,32 @@
+.container {
+    width: 960px;
+    height: 600px;
+    position: relative;
+    border: 1px solid gray;
+}
+
+.card {
+    width: 500px;
+    height: 200px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.card-1 {
+    background-color: red;
+    top: 50px;
+    left: 50px;
+}
+
+.card-2 {
+    background-color: green;
+    top: 100px;
+    left: 100px;
+}
+
+.card-3 {
+    background-color: blue;
+    top: 150px;
+    left: 150px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}

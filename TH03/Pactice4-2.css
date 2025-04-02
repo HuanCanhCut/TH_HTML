@@ -1,0 +1,50 @@
+.container {
+    width: 960px;
+    height: 600px;
+    border: 1px solid gray;
+    padding: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    margin: 0;
+}
+
+.content {
+    width: 350px;
+    height: 100%;
+}
+
+.title {
+    font-size: 16px;
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.date {
+    color: gray;
+}
+
+.content-text {
+    margin-top: 10px;
+}
+
+.content img {
+    width: 150px;
+    margin-right: 10px;
+    float: left;
+}
+
+.top-new {
+    width: 330px;
+    height: 300px;
+    background-color: #f0f0f0;
+}
+
+.menu-right {
+    width: 260px;
+    height: 100%;
+    background-color: #f0f0f0;
+}
