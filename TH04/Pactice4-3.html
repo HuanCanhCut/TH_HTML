@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .registration-form {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label:not(:has(+ input[type='radio'])) {
+            display: inline-block;
+            width: 100px;
+        }
+
+        input[type='text'],
+        input[type='date'],
+        input[type='tel'],
+        input[type='email'] {
+            width: 150px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type='radio'] {
+            margin-left: 10px;
+        }
+
+        .required {
+            color: red;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+
+        .form-message {
+            color: red;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <body>
+        <div class="registration-form">
+            <form id="form">
+                <div class="form-group">
+                    <label for="name">Họ và tên:</label>
+                    <input type="text" id="name" />
+                    <span class="required">*</span>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label>Giới tính:</label>
+                    <input type="radio" id="male" name="gender" value="male" checked />
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="gender" value="female" />
+                    <label for="female">Nữ</label>
+                    <span class="required">*</span>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="dob">Ngày sinh:</label>
+                        <input type="text" id="dob" />
+                        <span class="required">*</span>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="address">Địa chỉ:</label>
+                        <input type="text" id="address" />
+                        <span class="required">*</span>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" />
+                        <span class="required">*</span>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" />
+                        <span class="required">*</span>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="captcha">Mã xác nhận:</label>
+                        <input type="text" id="captcha" />
+                        <span class="required">*</span>
+                    </div>
+                    <span class="form-message"></span>
+                </div>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </div>
+        <script src="Validator.js"></script>
+        <script>
+            Validator({
+                form: '#form',
+                errorSelector: '.form-message',
+                formGroup: '.form-group',
+                rules: [
+                    Validator.isRequired('#email'),
+                    Validator.isEmail('#email'),
+                    Validator.isRequired('#captcha'),
+                    Validator.isRequired('#name'),
+                    Validator.isUsername('#name'),
+                    Validator.isRequired('#dob'),
+                    Validator.isDate('#dob'),
+                    Validator.isRequired('#address'),
+                    Validator.isRequired('#phone'),
+                    Validator.isRequired('#captcha'),
+                ],
+                submit: (data) => {},
+            })
+        </script>
+    </body>
+</html>
