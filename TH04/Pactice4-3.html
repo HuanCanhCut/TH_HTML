@@ -136,14 +136,16 @@
                 rules: [
                     Validator.isRequired('#email'),
                     Validator.isEmail('#email'),
-                    Validator.isRequired('#captcha'),
                     Validator.isRequired('#name'),
-                    Validator.isUsername('#name'),
+                    Validator.isUsername('#name', 50, 'Tên tài khoản không được quá 50 ký tự!'),
                     Validator.isRequired('#dob'),
                     Validator.isDate('#dob'),
                     Validator.isRequired('#address'),
+                    Validator.isLimitLength('#address', 40, 'Địa chỉ không được quá 40 ký tự!'),
                     Validator.isRequired('#phone'),
+                    Validator.isPhone('#phone'),
                     Validator.isRequired('#captcha'),
+                    Validator.isCaptcha('#captcha'),
                 ],
                 submit: (data) => {},
             })

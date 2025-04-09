@@ -98,6 +98,7 @@ a {
     opacity: 0;
     visibility: hidden;
     transform: translateY(15px);
+    z-index: 10;
 }
 
 .header__top__right__language ul li a {

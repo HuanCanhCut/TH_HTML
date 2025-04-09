@@ -38,6 +38,7 @@ function Validator(options) {
                 errorElement.innerText = ''
                 getParentElement(inputElement, options.formGroup).classList.remove('invalid')
             }
+
             return !errorMessage
         }
 
@@ -81,9 +82,29 @@ function Validator(options) {
             }
 
             let inputElement = document.querySelector(rule.selector)
+
             inputElement.onblur = () => {
-                if (inputElement.value === '') {
-                    invalid(inputElement, rule)
+                invalid(inputElement, rule)
+            }
+
+            const requiredElement = inputElement.parentElement.querySelector('.required')
+
+            requiredElement.onmouseover = () => {
+                let errorMessage
+
+                let rules = selectorRules[rule.selector]
+
+                for (let i = 0; i < rules.length; ++i) {
+                    errorMessage = rules[i](inputElement.value)
+                    if (errorMessage) {
+                        break
+                    }
+                }
+
+                if (errorMessage) {
+                    requiredElement.title = errorMessage
+                } else {
+                    requiredElement.title = ''
                 }
             }
         }
@@ -110,16 +131,26 @@ Validator.isEmail = function (selector, errorMessage) {
     }
 }
 
-Validator.isUsername = function (selector, errorMessage) {
+Validator.isUsername = function (selector, maxLength, errorMessage) {
     return {
         selector: selector,
         test: function (value) {
-            console.log(value)
+            if (value.trim().length > maxLength) {
+                return errorMessage || `Tên tài khoản không được quá ${maxLength} ký tự!`
+            }
             return /^[a-zA-Z]{1,10}$/.test(value) ? undefined : errorMessage || 'Tên tài khoản không hợp lệ!'
         },
     }
 }
 
+Validator.isLimitLength = function (selector, maxLength, errorMessage) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return value.trim().length > maxLength ? errorMessage || `Không được quá ${maxLength} ký tự!` : undefined
+        },
+    }
+}
 Validator.isDate = function (selector, errorMessage) {
     return {
         selector: selector,
@@ -127,6 +158,24 @@ Validator.isDate = function (selector, errorMessage) {
             return /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([0-9]{4})$/.test(value)
                 ? undefined
                 : errorMessage || 'Ngày không hợp lệ!'
+        },
+    }
+}
+
+Validator.isPhone = function (selector, errorMessage) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return /^[0-9]{10}$/.test(value) ? undefined : errorMessage || 'Số điện thoại không hợp lệ!'
+        },
+    }
+}
+
+Validator.isCaptcha = function (selector, errorMessage) {
+    return {
+        selector: selector,
+        test: function (value) {
+            return /^[0-9]+$/.test(value) ? undefined : errorMessage || 'Mã xác nhận phải là số!'
         },
     }
 }
