@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Signup Form</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="slider">
+                <div class="form-container sign-up">
+                    <h1 class="title">Signup</h1>
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                name="fullname"
+                                id="fullname"
+                                class="form-control"
+                                placeholder="Full name"
+                                value="Huan Canh Cut"
+                            />
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                name="signup_email"
+                                id="signup_email"
+                                class="form-control"
+                                placeholder="Email address"
+                                value="tronghuanxxx@gmail.com"
+                                maxlength="100"
+                            />
+                            <span class="char-count"></span>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-control-group form-control-group-signup">
+                                <input
+                                    type="password"
+                                    name="signup_password"
+                                    id="signup_password"
+                                    class="form-control"
+                                    placeholder="Password"
+                                    value="Huancanhcut123@"
+                                />
+                                <i class="fa-solid fa-eye"></i>
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
+                            <div class="power-password-wrapper">
+                                <div class="power-password-item"></div>
+                                <div class="power-password-item"></div>
+                                <div class="power-password-item"></div>
+                            </div>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group form-condition">
+                            <div>
+                                <input type="checkbox" class="form-checkbox" id="checkbox" />
+                                <label for="checkbox">I accept all terms and conditions</label>
+                            </div>
+                            <span class="form-message"></span>
+                        </div>
+
+                        <span class="error-message"></span>
+
+                        <button type="submit" class="form__button">Signup</button>
+                    </form>
+
+                    <footer class="form-footer">
+                        <h1 style="cursor: pointer" class="switch-login">Login</h1>
+                    </footer>
+                </div>
+
+                <div class="form-container login">
+                    <h1 style="cursor: pointer" class="title switch-signup">Signup</h1>
+                    <form id="login-form">
+                        <h1>Login</h1>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                name="login_email"
+                                id="login_email"
+                                class="form-control"
+                                placeholder="Email address"
+                            />
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-control-group form-control-group-login">
+                                <input
+                                    type="password"
+                                    name="login_password"
+                                    id="login_password"
+                                    class="form-control"
+                                    placeholder="Password"
+                                    maxlength="100"
+                                />
+                                <i class="fa-solid fa-eye"></i>
+                                <i class="fa-solid fa-eye-slash"></i>
+                            </div>
+
+                            <span class="form-message"></span>
+                        </div>
+
+                        <span class="form-forgot">Forgot password?</span>
+
+                        <span class="error-message"></span>
+
+                        <button type="submit" class="form__button">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+        <script src="Validator.js"></script>
+        <script>
+            Validator({
+                form: '#signup-form',
+                errorSelector: '.form-message',
+                formGroup: '.form-group',
+                rules: [
+                    Validator.isRequired('#fullname'),
+                    Validator.isMinWords('#fullname', 2, 'Họ tên phải chứa ít nhất 2 từ'),
+                    Validator.isRequired('#signup_email'),
+                    Validator.isEmail('#signup_email'),
+                    Validator.isRequired('#signup_password'),
+                    Validator.isPassword('#signup_password', 8),
+                    Validator.isChecked('#checkbox', 'Vui lòng đồng ý với điều khoản sử dụng!'),
+                ],
+                submit: (data) => {
+                    const users = JSON.parse(localStorage.getItem('users')) || []
+
+                    const user = {
+                        email: data.signup_email,
+                        password: data.signup_password,
+                        fullname: data.fullname,
+                    }
+
+                    const errorMessage = document.querySelector('.error-message')
+
+                    if (users.some((user) => user.email === data.signup_email)) {
+                        errorMessage.textContent = 'Email đã tồn tại!'
+                        return
+                    }
+
+                    users.push(user)
+
+                    localStorage.setItem('users', JSON.stringify(users))
+
+                    alert('Đăng ký thành công!')
+                },
+            })
+        </script>
+        <script>
+            Validator({
+                form: '#login-form',
+                errorSelector: '.form-message',
+                formGroup: '.form-group',
+                rules: [
+                    Validator.isRequired('#login_email'),
+                    Validator.isEmail('#login_email'),
+                    Validator.isRequired('#login_password'),
+                    Validator.isPassword('#login_password', 8),
+                ],
+                submit: (data) => {
+                    const user = {
+                        email: data.login_email,
+                        password: data.login_password,
+                    }
+
+                    const users = JSON.parse(localStorage.getItem('users')) || []
+
+                    const hasUser = users.find(
+                        (user) => user.email === data.login_email && user.password === data.login_password
+                    )
+
+                    const errorMessage = document.querySelector('.error-message')
+
+                    if (!hasUser) {
+                        errorMessage.textContent = 'Email hoặc mật khẩu không đúng!'
+                        return
+                    }
+
+                    alert('Đăng nhập thành công!')
+                },
+            })
+        </script>
+    </body>
+</html>

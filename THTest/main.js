@@ -43,22 +43,39 @@ const app = {
     handleEvent() {
         const gap = 25
         const itemWidth = slider.querySelector('.slider__item').offsetWidth
+
         prevButton.addEventListener('click', () => {
             const slideList = document.querySelectorAll('.slider__item')
             slider.insertBefore(slideList[slideList.length - 1], slideList[0])
+
             Object.assign(slider.style, {
-                transition: 'all 0.3s linear',
+                transition: 'none',
                 transform: `translateX(-${itemWidth + gap}px)`,
             })
+
+            setTimeout(() => {
+                Object.assign(slider.style, {
+                    transition: 'all 0.3s linear',
+                    transform: 'translateX(0)',
+                })
+            }, 10)
         })
 
         nextButton.addEventListener('click', () => {
             const slideList = document.querySelectorAll('.slider__item')
-            slider.appendChild(slideList[0])
+
             Object.assign(slider.style, {
                 transition: 'all 0.3s linear',
                 transform: `translateX(-${itemWidth + gap}px)`,
             })
+
+            setTimeout(() => {
+                slider.appendChild(slideList[0])
+                Object.assign(slider.style, {
+                    transition: 'none',
+                    transform: 'translateX(0)',
+                })
+            }, 300)
         })
 
         setInterval(() => {
